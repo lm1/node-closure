@@ -1,0 +1,15 @@
+{
+  "name": "closure",
+  "description": "Google closure-library wrapper for node.js",
+  "version": "1.0.0",
+  "homepage": "http://github.com/lm1/node-closure",
+  "repository": "https://github.com/lm1/node-closure.git",
+  "author": "Lukasz Mielicki <mielicki@gmail.com>",
+  "main": "closure",
+  "directories": {
+    "lib": "."
+  },
+  "engines": {
+    "node": "0.3.2"
+  }
+}
