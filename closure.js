@@ -107,7 +107,7 @@ this.Closure = function foo(opt_goog_global) {
     Executes given code in global scope or in a nifty wrapper providing
     direct access to all global names, i.e.
 
-      (function(){with(this){ CODE }}).call(global_object);
+      (function(){with(this){ CODE }});
 
     This is necassary to run closure scripts in same execution context while
     having distinct global object.
@@ -121,15 +121,10 @@ this.Closure = function foo(opt_goog_global) {
       // Run directly in global scope in case global object is used.
       vm.runInThisContext(code, opt_filename);
     } else {
-      // Use wrapper. Temporary process global object is used to preserve
-      // source reference in error messages (otherwise eval could be used).
-      process.__goog_tmp_ = goog_;
-      var wrapper =
-          '(function(){with(this){' +
-              code +
-          '}}).call(process.__goog_tmp_);';
-      vm.runInThisContext(wrapper, opt_filename);
-      delete process.__goog_tmp_;
+      // Use wrapper.
+      var wrapper = '(function(){with(this){' + code + '}});';
+      var fn = vm.runInThisContext(wrapper, opt_filename);
+      fn.call(goog_);
     }
   }
 
