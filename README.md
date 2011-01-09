@@ -5,6 +5,12 @@ Does execute closure scripts in same execution context while (optionally) in dis
 
 Enjoy!
 
+## Installation
+
+Just copy closure.js, or using npm:
+
+    npm install closure
+
 ## Introduction
 
 To apply closure to global object:
