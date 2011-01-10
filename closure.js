@@ -122,7 +122,7 @@ this.Closure = function foo(opt_goog_global) {
       vm.runInThisContext(code, opt_filename);
     } else {
       // Use wrapper.
-      var wrapper = '(function(){with(this){' + code + '}});';
+      var wrapper = '(function(){with(this){' + code + '\n}});';
       var fn = vm.runInThisContext(wrapper, opt_filename);
       fn.call(goog_);
     }
