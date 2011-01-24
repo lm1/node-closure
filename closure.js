@@ -56,7 +56,7 @@ var assert = require('assert').ok;
       global object.
   @return {Object} goog namespace object.
 */
-this.Closure = function foo(opt_goog_global) {
+exports.Closure = function(opt_goog_global) {
 
   /**
     Internal closure global object.
@@ -136,7 +136,7 @@ this.Closure = function foo(opt_goog_global) {
   */
   function set_defaults(target, defaults) {
     for (var attr in defaults) {
-      if (typeof target[attr] === 'undefined') {
+      if (target[attr] === undefined) {
         target[attr] = defaults[attr];
       }
     }
@@ -144,8 +144,7 @@ this.Closure = function foo(opt_goog_global) {
 
   // Load base.js
   var basepath = goog_.CLOSURE_BASE_PATH;
-  assert(basepath.charAt(basepath.length - 1) === '/',
-      "CLOSURE_BASE_PATH must end with '/'");
+  assert(basepath.slice(-1) === '/', "CLOSURE_BASE_PATH must end with '/'");
 
   load_script(basepath + 'base.js');
 
