@@ -15,16 +15,16 @@ Just copy closure.js, or using npm:
 
 To apply closure to global object:
 
-    require.('closure').Closure(global);
+    require('closure').Closure(global);
 
 To create separate instance of closure
 
-    var goog = require.('closure').Closure();
+    var goog = require('closure').Closure();
 
 By default closure library base.js is expected to be found in
 ./closure-library/closure/goog/, to override this, say:
 
-    var goog = require.('closure').Closure({CLOSURE_BASE_PATH: 'closure/goog/'});
+    var goog = require('closure').Closure({CLOSURE_BASE_PATH: 'closure/goog/'});
 
 To fetch additional closure dependencies:
 
@@ -34,6 +34,6 @@ To easily access other namespaces than goog either apply closure to
 global object or provide own global object, i.e.
 
     var root = {};
-    require.('closure').Closure(root);
+    require('closure').Closure(root);
     //root.goog is goog namespace
     //root.soy is soy namespace
