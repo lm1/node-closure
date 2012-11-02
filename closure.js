@@ -48,6 +48,7 @@
 var vm = require('vm');
 var fs = require('fs');
 var assert = require('assert').ok;
+var path = require('path');
 
 
 /**
@@ -98,7 +99,7 @@ exports.Closure = function(opt_goog_global) {
     @private
   */
   function load_script(filename) {
-    var code = fs.readFileSync(filename, 'utf8');
+    var code = fs.readFileSync(  path.normalize( filename ), 'utf8');
     exec_script(code, filename);
     return true;
   }
