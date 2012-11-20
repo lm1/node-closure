@@ -145,7 +145,7 @@ exports.Closure = function(opt_goog_global) {
 
   // Load base.js
   var basepath = goog_.CLOSURE_BASE_PATH;
-  assert(basepath.slice(-1) === '/', "CLOSURE_BASE_PATH must end with '/'");
+  assert(basepath.slice(-1) === path.sep, "CLOSURE_BASE_PATH must end with '" + path.sep + "'");
 
   load_script(basepath + 'base.js');
 
