@@ -1,7 +1,7 @@
 {
   "name": "closure",
   "description": "Google closure-library wrapper for node.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "url": "http://github.com/lm1/node-closure",
   "author": "Lukasz Mielicki <mielicki@gmail.com>",
   "main": "closure",
